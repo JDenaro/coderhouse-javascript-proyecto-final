@@ -1,0 +1,52 @@
+.fixed-top.scrolled {
+  background-color: #fff !important;
+  -webkit-transition: background-color 200ms linear;
+  transition: background-color 200ms linear;
+  -webkit-box-shadow: 5px 5px 15px 5px #000000;
+  box-shadow: 5px 5px 15px 5px #000000;
+}
+
+a.navbar-brand.text-light:hover,
+a.nav-link:hover {
+  color: #2F3437ff !important;
+}
+
+.nav-link {
+  font-size: 1rem;
+  font-weight: 600;
+  -webkit-transition: .2s;
+  transition: .2s;
+  color: #2F3437ff !important;
+}
+
+.nav-link:hover {
+  -webkit-transform: scale(1.2);
+          transform: scale(1.2);
+}
+
+.header {
+  height: 40rem;
+  background-image: url(../img/departamento.jpg);
+  background-size: cover;
+  background-position: center center;
+}
+
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 400;
+}
+
+.navbar-brand span {
+  font-weight: 700;
+}
+
+.btn-dark {
+  background-color: #393f42 !important;
+  border-color: #393f42 !important;
+}
+
+.btn-dark:hover {
+  background-color: #525b5f !important;
+  border-color: #525b5f !important;
+}
+/*# sourceMappingURL=styles.css.map */

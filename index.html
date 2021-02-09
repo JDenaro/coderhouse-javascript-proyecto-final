@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Simulador de credito | CreditJS</title>
+</head>
+
+<body>
+    <header class="header">
+        <nav id="navegacion-principal" class="navbar fixed-top navbar-light bg-transparent">
+            <div class="container">
+                <a href="#" class="navbar-brand text-dark">Credit <span>JS</span></a>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a href="#nosotros" class="nav-link" id="navNosotros">Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#simular" class="nav-link" id="navSimular">Simulador</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contacto" class="nav-link" id="navContacto">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="main">
+        <div class="bg-dark text-light py-5" id="nosotros">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/imagen-nosotros.jpg" class="img-fluid rounded" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>NOSOTROS</h2>
+                        <p>Somos una empresa de creditos inmobiliarios que emplea la tecnologia para ayudarte a encontrar tu vivienda soñada.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-light text-dark py-5" id="simular">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h2>SIMULA TU CREDITO</h2>
+                        <p>Obtene el credito que mejor se ajuste a tus necesidades!</p>
+                        <div class="d-flex justify-content-center py-3">
+                            <button type="button" class="btn btn-lg btn-dark" data-toggle="modal" data-target="#simularYa" id="btnSimular">SIMULAR YA!</button>
+                        </div>
+
+                        <!-- Modal -->
+                        <div class="modal fade" id="simularYa" tabindex="-1" role="dialog" aria-labelledby="simularYaTitle" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="simularYaTitle">Simulador</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div class="form">
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect1">Tipo</label>
+                                                <select class="form-control" id="select-tipo">
+                                                    <option disabled selected>Selecciona una opción</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="exampleFormControlSelect2">Cuotas</label>
+                                                <select class="form-control" id="select-cuotas">
+                                                    <option disabled selected>Selecciona una opción</option>
+                                                </select>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="formGroupExampleInput">Monto</label>
+                                                <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Ingrese el monto">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                                        <button type="button" class="btn btn-primary">Simular</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="col-md-6">
+                        <img src="img/imagen-simular-credito.jpg" class="img-fluid rounded" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="bg-dark text-light py-5" id="contacto">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <img src="img/imagen-contacto.jpg" class="img-fluid rounded" alt="">
+                    </div>
+                    <div class="col-md-6">
+                        <h2>CONTACTO</h2>
+                        <p>Envianos tus consultas y las responderemos a la brevedad!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    </script>
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

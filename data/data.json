@@ -1,0 +1,14 @@
+{
+    "Adquisicion": {
+        "cuotas": [60, 72, 120, 180, 240],
+        "interes": 58
+    },
+    "Ampliacion": {
+        "cuotas": [12, 24, 48, 60],
+        "interes": 62
+    },
+    "Construccion": {
+        "cuotas": [60, 72, 120, 180],
+        "interes": 65
+    }
+}
