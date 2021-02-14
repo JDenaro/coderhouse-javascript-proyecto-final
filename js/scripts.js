@@ -114,12 +114,16 @@ function simularCredito(e) {
             mensaje.innerHTML = `
             <p>Todos los campos son obligatorios<p>
             `;
-            //mensaje.classList.add("bg-light", "text-center", "text-secondary", "rounded");
             mensaje.classList.add("alert", "alert-danger", "text-center", "alerta");
             modalBody.appendChild(mensaje);
+            $(".alerta").fadeIn(300)
             setTimeout(() => {
-                mensaje.remove();
+                $(".alerta").fadeOut(300);
+                setTimeout(() => {
+                    mensaje.remove();
+                }, 301);
             }, 3000);
+
         }
     } else {
         console.log('Campos llenos');
@@ -135,8 +139,13 @@ function simularCredito(e) {
         //mensaje.classList.add("bg-light", "text-center", "text-secondary", "rounded");
         mensaje.classList.add("alert", "alert-primary", "text-center", "alerta");
         modalBody.appendChild(mensaje);
+        $(".alerta").fadeIn(300)
+
         setTimeout(() => {
-            mensaje.remove();
+            $(".alerta").fadeOut(300);
+            setTimeout(() => {
+                mensaje.remove();
+            }, 301);
         }, 3000);
     }
 
