@@ -94,7 +94,6 @@ function agregarCuotas(e) {
 }
 
 function limpiarSelectCuotas() {
-    console.log('Limpiando formulario');
     selectCuotas.innerHTML = `
     <option value="" disabled selected>Selecciona una opción</option>
     `
@@ -102,15 +101,19 @@ function limpiarSelectCuotas() {
 
 function simularCredito(e) {
     e.preventDefault();
+    if (btnSimular.classList.contains('disabled')) {
+        return;
+    }
+    btnSimular.classList.add('disabled');
     const alerta = document.querySelector('.alerta');
-    console.log('En simularCredito');
-    console.log(selectTipo.value);
-    console.log(selectCuotas.value);
-    console.log(inputMonto.value);
+    if (alerta) {
+        alerta.remove();
+    }
     if (selectTipo.value === "" | selectCuotas.value === "" | inputMonto.value === "") {
         if (!alerta) {
             console.log('Todos los campos son obligatorios')
             const mensaje = document.createElement('div');
+            mensaje.id = "mensaje";
             mensaje.innerHTML = `
             <p>Todos los campos son obligatorios<p>
             `;
@@ -122,12 +125,15 @@ function simularCredito(e) {
                 setTimeout(() => {
                     mensaje.remove();
                 }, 301);
+                btnSimular.classList.remove('disabled')
             }, 3000);
-
         }
     } else {
-        console.log('Campos llenos');
+        if (alerta) {
+            alerta.remove();
+        }
         const mensaje = document.createElement('div');
+        mensaje.id = "mensaje";
         mensaje.innerHTML = `
             <p>Simulando...<p>
             <div class="spinner">
@@ -140,13 +146,24 @@ function simularCredito(e) {
         mensaje.classList.add("alert", "alert-primary", "text-center", "alerta");
         modalBody.appendChild(mensaje);
         $(".alerta").fadeIn(300)
-
         setTimeout(() => {
-            $(".alerta").fadeOut(300);
-            setTimeout(() => {
-                mensaje.remove();
-            }, 301);
-        }, 3000);
+            const tipoCredito = selectTipo.value;
+            const montoSolicitado = parseInt(inputMonto.value);
+            const cuotas = parseInt(selectCuotas.value);
+            const interes = (datosJson[tipoCredito].interes) / 100;
+            const intereses = montoSolicitado * interes * (cuotas / 12);
+            const total = montoSolicitado + intereses;
+            const valorCuotas = (total / cuotas).toFixed(2);
+            mensaje.innerHTML = `
+                    <p>Se deberan abonar ${cuotas} cuotas de USD $${valorCuotas}<p>
+                    `;
+            mensaje.classList.add("alert", "alert-primary", "text-center", "alerta");
+            modalBody.appendChild(mensaje);
+            btnSimular.classList.remove('disabled');
+        }, 2000);
+
+
+
     }
 
 }
